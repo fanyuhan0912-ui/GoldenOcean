@@ -17,5 +17,5 @@ function submitQuote(e){
     '',
     f.get('message')||''
   ].join('\n'));
-  window.location.href=`mailto:sales@goldenoceanindustrial.com?subject=${subject}&body=${body}`;
+  window.location.href=`mailto:goldenoceancanada@gmail.com?subject=${subject}&body=${body}`;
 }
