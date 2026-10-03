@@ -300,7 +300,7 @@ h1 {
     max-width: none;
 
     object-fit: cover;
-    object-position: 52% center;
+    object-position: 100% center;
 
     display: block;
 }
@@ -315,14 +315,14 @@ h1 {
     z-index: 2;
     pointer-events: none;
 
-    background: linear-gradient(
+    /* background: linear-gradient(
         90deg,
         var(--ink) 0%,
         rgba(6, 63, 59, .88) 7%,
         rgba(6, 63, 59, .50) 16%,
         rgba(6, 63, 59, .15) 30%,
         rgba(6, 63, 59, 0) 48%
-    );
+    ); */
 }
 
 .section {
