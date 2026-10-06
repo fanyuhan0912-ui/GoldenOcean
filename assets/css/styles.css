@@ -4,14 +4,14 @@
   --ink-2: #0B4778;
 
   /* 科技青蓝 */
-  --lime: #eaeefa;
+  --lime: #ffffff;
   --lime-2: #062B50;
 
   /* 胶囊 / 暖白色 */
   --cream: #F4F1E8;
 
   /* 页面背景 */
-  --paper: #F7FAFC;
+  --paper: #ffffff;
 
   /* 次级文字 */
   --muted: #6E7E8D;
@@ -44,10 +44,7 @@ body {
   line-height: 1.55
 }
 
-a {
-  color: inherit;
-  text-decoration: none
-}
+
 
 img {
   max-width: 100%;
@@ -83,12 +80,13 @@ img {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(255, 253, 248, .92);
+  background: rgb(255, 253, 248);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(219, 230, 226, .7)
+  border-bottom: 1px solid rgb(219, 230, 226)
 }
 
 .nav .container {
+
   height: 80px;
   display: flex;
   align-items: center;
@@ -101,14 +99,43 @@ img {
   align-items: center;
   gap: 10px;
   font-weight: 800;
-  color: var(--ink);
-  letter-spacing: .2px
+  letter-spacing: .2px;
+  text-decoration: none;
+
+  background: linear-gradient(90deg, #0064FA 0%, #5AA55A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-decoration: none;
 }
 
 .brand img {
   width: 52px;
   height: 52px;
-  object-fit: contain
+  object-fit: contain;
+}
+
+.brand-text {
+  background: linear-gradient(
+    90deg,
+    #0064FA 0%,
+    #5AA55A 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
 }
 
 .navlinks {
@@ -116,7 +143,18 @@ img {
   align-items: center;
   gap: 28px;
   font-size: 14px;
-  font-weight: 650
+  font-weight: 650;
+}
+
+.navlinks a,
+.navlinks a:link,
+.navlinks a:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+.navlinks a:hover {
+  color: #0064FA;
 }
 
 .navlinks a:hover {
@@ -158,7 +196,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 50px;
   border-radius: 999px;
   padding: 13px 20px;
   font-weight: 800;
@@ -169,12 +207,11 @@ img {
 
 .btn.primary {
   background: var(--lime);
-  color: #163b34
+  color: #062B50
 }
 
 .btn.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(166, 239, 101, .35)
 }
 
 .btn.dark {
@@ -188,141 +225,117 @@ img {
   color: var(--ink)
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero {
   position: relative;
-  background: var(--ink);
-  color: white;
-  overflow: hidden
+  min-height: 680px;
+
+  /* 把这里换成你的 hero 图片路径 */
+  background-image:
+   
+    url("../img/heroPage.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
 }
 
+
+/* 原来左右分栏，现在取消 */
 .hero .container.hero-container {
-  width: min(1440px, calc(100% - 80px));
+  width: min(1400px, calc(100% - 80px));
   max-width: none;
   min-height: 680px;
-  display: grid;
-  grid-template-columns: 44% 56%;
-  gap: 0;
-  align-items: stretch;
-  position: relative
-}
 
-.eyebrow {
-  font-size: 12px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  font-weight: 850;
-  color: var(--lime);
   display: flex;
   align-items: center;
-  gap: 9px
+  justify-content: center;
+
+  position: relative;
 }
 
-.eyebrow:before {
-  content: "";
-  width: 28px;
-  height: 2px;
-  background: currentColor
-}
 
-h1 {
-  font-size: clamp(46px, 6vw, 78px);
-  line-height: .98;
-  margin: 18px 0 24px;
-  letter-spacing: -.04em
-}
-
+/* 文字整体居中 */
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 180px 20px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 70px 55px 70px 0
+  align-items: center;
+
+  text-align: center;
 }
 
-.hero .eyebrow {
-  margin-bottom: 24px
-}
 
+
+
+
+/* 主标题 */
 .hero h1 {
+  font-size: clamp(52px, 6vw, 82px);
+  line-height: 0.98;
+
   margin: 0 0 28px;
-  font-size: clamp(58px, 5vw, 88px);
-  font-weight: 850;
-  line-height: .94;
-  letter-spacing: -.045em;
-  color: white
+
+  letter-spacing: -0.04em;
+  color:#0064FA;
 }
 
-.hero h1 span {
-  color: var(--lime)
-}
 
-.lead {
+/* 介绍文字 */
+.hero-content > p {
+  max-width: 720px;
+
   font-size: 18px;
-  color: #d7e7e4;
-  max-width: 680px
+  line-height: 1.65;
+
+  margin: 0 auto 32px;
+
+  color: #001b45;
 }
 
-.hero .lead {
-  max-width: 620px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, .86)
-}
 
-.actions {
+/* 按钮区域 */
+.hero-actions {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 30px
-}
-
-.hero .actions {
-  gap: 14px
-}
-
-.hero-image {
-    position: relative;
-    min-height: 10px;
-    overflow: hidden;
-
-    /* Extend image to right edge of screen */
-    margin-right: calc(50% - 50vw);
 }
 
 
-.hero-image img {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    max-width: none;
-
-    object-fit: cover;
-    object-position: 100% center;
-
-    display: block;
+/* 白色主按钮 */
+.hero .btn-primary {
+  background: rgb(239, 255, 14);
+  color: #083b66;
+  border-color: rgb(255, 255, 255);
 }
 
 
-.hero-image::after {
-    content: "";
+/* 透明次按钮 */
+.hero .btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid white;
+  color: white;
+  backdrop-filter: blur(4px);
+}
 
-    position: absolute;
-    inset: 0;
 
-    z-index: 2;
-    pointer-events: none;
-
-    /* background: linear-gradient(
-        90deg,
-        var(--ink) 0%,
-        rgba(6, 63, 59, .88) 7%,
-        rgba(6, 63, 59, .50) 16%,
-        rgba(6, 63, 59, .15) 30%,
-        rgba(6, 63, 59, 0) 48%
-    ); */
+/* hover */
+.hero .btn-outline:hover {
+  background: rgb(159, 207, 255);
+  color: #083b66;
 }
 
 .section {
@@ -615,12 +628,12 @@ h1 {
 .page-hero {
   padding: 110px 0 78px;
   background: linear-gradient(140deg, var(--ink), #0d5b55);
-  color: white
 }
 
 .page-hero h1 {
   font-size: 64px;
-  max-width: 900px
+  max-width: 900px;
+  color: #0064FA;
 }
 
 .page-hero p {
