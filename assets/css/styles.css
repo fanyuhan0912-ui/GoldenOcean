@@ -8,7 +8,7 @@
   --lime-2: #062B50;
 
   /* 胶囊 / 暖白色 */
-  --cream: #F4F1E8;
+  --cream: #ffffff;
 
   /* 页面背景 */
   --paper: #ffffff;
@@ -80,7 +80,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgb(255, 253, 248);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgb(219, 230, 226)
 }
@@ -206,8 +206,9 @@ img {
 }
 
 .btn.primary {
-  background: var(--lime);
-  color: #062B50
+  background: #005CCB;
+  color: #fff;
+  text-decoration: none;
 }
 
 .btn.primary:hover {
@@ -220,10 +221,12 @@ img {
 }
 
 .btn.outline {
-  border-color: #b8cdc8;
-  background: rgba(255, 255, 255, .7);
-  color: var(--ink)
+  background: #fff;
+  color: #086646;
+  border: 1.5px solid #3A8C6F;
+  text-decoration: none;
 }
+
 
 /* =========================
    HERO
@@ -267,7 +270,7 @@ img {
 
   max-width: 850px;
   margin: 0 auto;
-  padding: 180px 20px;
+  padding: 200px 20px;
 
   display: flex;
   flex-direction: column;
@@ -287,10 +290,24 @@ img {
 
   margin: 0 0 28px;
 
-  letter-spacing: -0.04em;
-  color:#0064FA;
+  /* letter-spacing: -0.04em;
+  background: linear-gradient(
+    90deg,
+    #0064FA 0%,
+    #5AA55A 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; */
+}
+.title-blue {
+  color: #073763;
 }
 
+.title-green {
+  color: #087A55;
+}
 
 /* 介绍文字 */
 .hero-content > p {
