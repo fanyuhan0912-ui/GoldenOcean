@@ -26,10 +26,16 @@
   --shadow: 0 18px 50px rgba(6, 43, 80, 0.16);
 
   --radius: 26px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 }
 
 * {
   box-sizing: border-box
+
 }
 
 html {
@@ -98,7 +104,7 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 800;
+  font-weight: var(--font-weight-extrabold);
   letter-spacing: .2px;
   text-decoration: none;
 
@@ -107,15 +113,6 @@ img {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  letter-spacing: .2px;
-  text-decoration: none;
 }
 
 .brand img {
@@ -143,7 +140,7 @@ img {
   align-items: center;
   gap: 28px;
   font-size: 14px;
-  font-weight: 650;
+  font-weight: var(--font-weight-semibold);
 }
 
 .navlinks a,
@@ -192,6 +189,11 @@ img {
   background: #f2f8f4
 }
 
+.actions {
+  display: flex;
+  gap: 60px;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -199,7 +201,7 @@ img {
   gap: 50px;
   border-radius: 999px;
   padding: 13px 20px;
-  font-weight: 800;
+  font-weight: var(--font-weight-extrabold);
   font-size: 14px;
   border: 1px solid transparent;
   transition: .2s
@@ -216,6 +218,8 @@ img {
 }
 
 .btn.dark {
+  text-decoration: none;
+  margin-top: 20px;
   background: var(--ink);
   color: white
 }
@@ -247,7 +251,6 @@ img {
 
   overflow: hidden;
 }
-
 
 /* 原来左右分栏，现在取消 */
 .hero .container.hero-container {
@@ -310,7 +313,7 @@ img {
 }
 
 /* 介绍文字 */
-.hero-content > p {
+.lead {
   max-width: 720px;
 
   font-size: 18px;
@@ -321,6 +324,18 @@ img {
   color: #001b45;
 }
 
+.lead1 {
+  max-width: 720px;
+
+  font-size: 25px;
+  line-height: 1.65;
+  text-wrap: wrap;
+
+  margin: 0 auto 32px;
+  font-weight: 600;
+  color: #015610;
+
+}
 
 /* 按钮区域 */
 .hero-actions {
@@ -329,6 +344,7 @@ img {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  color: #001b45;
 }
 
 
@@ -366,13 +382,27 @@ img {
 .section-title {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
-  gap: 40px;
-  align-items: end;
-  margin-bottom: 40px
+  gap: 30px;
+  align-items: center;
+
+  padding: 36px 42px;
+
+  background: rgba(255, 255, 255, 0.659);
+
+  border-radius: 22px;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  margin-top: -200px;
+  margin-bottom: 70px;
+
+  position: relative;
+  z-index: 5;
 }
 
 .section-title h2 {
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: clamp(26px, 4vw, 46px);
   letter-spacing: -.035em;
   line-height: 1.04;
   margin: 8px 0 0;
@@ -393,10 +423,10 @@ img {
 }
 
 .card {
-  border-radius: var(--radius);
+
   padding: 28px;
   background: white;
-  border: 1px solid #e6eeeb;
+ 
   min-height: 285px;
   position: relative;
   overflow: hidden
@@ -408,14 +438,14 @@ img {
 }
 
 .card.dark {
-  background: var(--ink);
-  color: white;
+  border-radius: var(--radius);
+  border: 1px solid #e6eeeb;
   border-color: transparent
 }
 
 .card .num {
   font-size: 13px;
-  font-weight: 900;
+  font-weight: var(--font-weight-bold);
   opacity: .55
 }
 
@@ -426,14 +456,11 @@ img {
   letter-spacing: -.025em
 }
 
-.card p {
+.card  p{
   color: #5b6b67;
   margin: 0 0 22px
 }
 
-.card.dark p {
-  color: #d3e1de
-}
 
 .card.featured p {
   color: #355047
@@ -443,8 +470,10 @@ img {
   display: inline-flex;
   gap: 8px;
   align-items: center;
-  font-size: 13px;
-  font-weight: 850
+  font-size: 20px;
+  font-weight: var(--font-weight-extrabold);
+  text-decoration: none;
+  color: #086646;
 }
 
 .pill {
@@ -454,7 +483,7 @@ img {
   background: #0a585214;
   color: white;
   font-size: 11px;
-  font-weight: 900;
+  font-weight: var(--font-weight-extrabold);
   text-transform: uppercase;
   letter-spacing: .08em
 }
@@ -468,25 +497,19 @@ img {
 
 .story-visual {
   min-height: 560px;
-  border-radius: 34px;
+ 
   position: relative;
-  overflow: hidden
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* .story-visual:before {
-  content: "";
-  position: absolute;
-  inset: 12%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #b7ee6f 0 15%, #1aa8d8 37%, #0b615d 68%, #083d39 100%);
-  filter: saturate(.85)
-} */
-
 .story-visual img {
-  position: center;
-  align-items: center;
   width: 100%;
-  padding: 16px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .story-copy {
@@ -547,7 +570,7 @@ img {
   display: grid;
   place-items: center;
   color: var(--ink);
-  font-weight: 900;
+  font-weight: var(--font-weight-extrabold);
   margin-bottom: 24px
 }
 
@@ -771,7 +794,7 @@ img {
 
 .field label {
   font-size: 13px;
-  font-weight: 750;
+  font-weight: var(--font-weight-bold);
   color: var(--ink)
 }
 
