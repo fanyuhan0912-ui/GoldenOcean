@@ -5,7 +5,6 @@
 
   /* 科技青蓝 */
   --lime: #ffffff;
-  --lime-2: #062B50;
 
   /* 胶囊 / 暖白色 */
   --cream: #ffffff;
@@ -19,15 +18,10 @@
   /* 边框 */
   --line: #D7E3EB;
 
-  /* 辅助蓝 */
-  --blue: #1677C8;
-
   /* 蓝色柔光阴影 */
   --shadow: 0 18px 50px rgba(6, 43, 80, 0.16);
 
   --radius: 26px;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
@@ -151,10 +145,6 @@ img {
 }
 
 .navlinks a:hover {
-  color: #0064FA;
-}
-
-.navlinks a:hover {
   color: var(--ink-2)
 }
 
@@ -253,19 +243,6 @@ img {
 }
 
 /* 原来左右分栏，现在取消 */
-.hero .container.hero-container {
-  width: min(1400px, calc(100% - 80px));
-  max-width: none;
-  min-height: 680px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
-}
-
-
 /* 文字整体居中 */
 .hero-content {
   position: relative;
@@ -337,40 +314,6 @@ img {
 
 }
 
-/* 按钮区域 */
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  color: #001b45;
-}
-
-
-/* 白色主按钮 */
-.hero .btn-primary {
-  background: rgb(239, 255, 14);
-  color: #083b66;
-  border-color: rgb(255, 255, 255);
-}
-
-
-/* 透明次按钮 */
-.hero .btn-outline {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid white;
-  color: white;
-  backdrop-filter: blur(4px);
-}
-
-
-/* hover */
-.hero .btn-outline:hover {
-  background: rgb(159, 207, 255);
-  color: #083b66;
-}
-
 .section {
   padding: 96px 0
 }
@@ -418,7 +361,7 @@ img {
 
 .grid3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px
 }
 
@@ -441,12 +384,6 @@ img {
   border-radius: var(--radius);
   border: 1px solid #e6eeeb;
   border-color: transparent
-}
-
-.card .num {
-  font-size: 13px;
-  font-weight: var(--font-weight-bold);
-  opacity: .55
 }
 
 .card h3 {
@@ -476,21 +413,9 @@ img {
   color: #086646;
 }
 
-.pill {
-  display: inline-flex;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: #0a585214;
-  color: white;
-  font-size: 11px;
-  font-weight: var(--font-weight-extrabold);
-  text-transform: uppercase;
-  letter-spacing: .08em
-}
-
 .story {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
   align-items: stretch
 }
@@ -551,7 +476,7 @@ img {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px
 }
 
@@ -560,18 +485,6 @@ img {
   border-radius: 22px;
   padding: 22px;
   background: white
-}
-
-.icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: var(--lime-2);
-  display: grid;
-  place-items: center;
-  color: var(--ink);
-  font-weight: var(--font-weight-extrabold);
-  margin-bottom: 24px
 }
 
 .feature h4 {
@@ -633,7 +546,7 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
   gap: 36px
 }
 
@@ -688,13 +601,6 @@ img {
     background-position: center;
     background-repeat: no-repeat;
 }
-.page-hero.about {
-    background-image: url("../img/About-HERO.png") !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .page-hero h1 {
   font-size: 64px;
   max-width: 900px;
@@ -715,7 +621,7 @@ img {
 
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 50px;
   align-items: start
 }
@@ -779,7 +685,7 @@ img {
 
 .downloads {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px
 }
 
@@ -803,7 +709,7 @@ img {
 
 .formgrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px
 }
 
@@ -847,7 +753,11 @@ textarea {
   color: var(--ink)
 }
 
-@media(max-width:900px) {
+@media(max-width:1024px) {
+  .nav .container {
+    gap: 16px
+  }
+
   .navlinks {
     display: none;
     position: absolute;
@@ -858,11 +768,26 @@ textarea {
     padding: 20px;
     flex-direction: column;
     align-items: flex-start;
-    border-bottom: 1px solid var(--line)
+    border-bottom: 1px solid var(--line);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto
   }
 
   .navlinks.open {
     display: flex
+  }
+
+  .navlinks .drop {
+    width: 100%
+  }
+
+  .navlinks .dropmenu {
+    position: static;
+    display: block;
+    width: 100%;
+    padding: 4px 0 0;
+    border: 0;
+    box-shadow: none
   }
 
   .menu-toggle {
@@ -876,61 +801,53 @@ textarea {
   .section-title,
   .story,
   .two-col {
-    grid-template-columns: 1fr
+    grid-template-columns: minmax(0, 1fr)
   }
 
-  .hero .container.hero-container {
-    width: min(100% - 40px, 1180px);
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 60px 0 0
+  .hero {
+    min-height: 0
   }
 
   .hero-content {
-    padding: 20px 0 55px
-  }
-
-  .hero-image {
-    min-height: 480px;
-    margin-left: -20px;
-    margin-right: -20px
-  }
-
-  .hero-image::after {
-    background: linear-gradient(180deg,
-      var(--ink) 0%,
-      rgba(6, 63, 59, .35) 22%,
-      rgba(6, 63, 59, 0) 48%)
+    padding: clamp(100px, 16vw, 160px) 20px
   }
 
   .grid3,
   .feature-grid,
   .downloads {
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: repeat(2, minmax(0, 1fr))
   }
 
   .story-copy {
     padding-left: 0
   }
 
+  .page-hero {
+    padding: clamp(72px, 10vw, 110px) 0 clamp(48px, 7vw, 78px)
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem)
+  }
+
   .footer-grid {
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: repeat(2, minmax(0, 1fr))
   }
 
   .cta {
-    padding: 38px;
+    padding: clamp(28px, 5vw, 38px);
     align-items: flex-start;
     flex-direction: column
   }
 
-  .page-hero h1 {
-    font-size: 48px
+  .footline {
+    flex-wrap: wrap
   }
 }
 
-@media(max-width:620px) {
+@media(max-width:640px) {
   .container {
-    width: min(100% - 24px, 1180px)
+    width: min(1180px, calc(100% - 32px))
   }
 
   .topbar .right {
@@ -946,42 +863,134 @@ textarea {
     grid-template-columns: 1fr
   }
 
-  .hero .container.hero-container {
-    width: calc(100% - 24px)
+  .hero h1 {
+    font-size: clamp(2.25rem, 9vw, 3.25rem)
   }
 
-  .hero h1 {
-    font-size: 52px
+  .hero-content {
+    padding: clamp(88px, 20vw, 128px) 16px
+  }
+
+  .lead1 {
+    font-size: clamp(18px, 4vw, 25px)
   }
 
   .hero .lead {
     font-size: 16px
   }
 
-  .hero-image {
-    min-height: 360px;
-    margin-left: -12px;
-    margin-right: -12px
-  }
-
-  .hero-image img {
-    object-position: 58% center
-  }
-
   .section {
-    padding: 72px 0
+    padding: 64px 0
+  }
+
+  .section-title {
+    padding: 28px 24px;
+    margin-top: 0;
+    margin-bottom: 40px
+  }
+
+  .card {
+    padding: 22px
+  }
+
+  .card h3 {
+    margin-top: 32px
+  }
+
+  .story-visual {
+    min-height: 360px
   }
 
   .story-copy h2,
-  .section-title h2 {
-    font-size: 40px
+  .section-title h2,
+  .prose h2 {
+    font-size: clamp(2rem, 7vw, 2.5rem)
+  }
+
+  .page-hero {
+    padding: 64px 0 48px
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem)
+  }
+
+  .page-hero p {
+    font-size: 16px
+  }
+
+  .two-col {
+    gap: 32px
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+    overflow-wrap: anywhere
+  }
+
+  .actions {
+    gap: 12px;
+    flex-wrap: wrap
+  }
+
+  .cta {
+    padding: 28px 22px;
+    border-radius: 24px
   }
 
   .cta h2 {
-    font-size: 36px
+    font-size: clamp(1.75rem, 7vw, 2.25rem)
   }
 
   .footline {
     flex-direction: column
+  }
+}
+
+@media(max-width:420px) {
+  .container {
+    width: min(1180px, calc(100% - 28px))
+  }
+
+  .nav .container {
+    gap: 10px
+  }
+
+  .brand {
+    gap: 6px;
+    font-size: 14px
+  }
+
+  .brand img {
+    width: 44px;
+    height: 44px
+  }
+
+  .menu-toggle {
+    padding: 6px;
+    font-size: 24px
+  }
+
+  .grid3,
+  .feature-grid,
+  .downloads,
+  .formgrid,
+  .statrow,
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr)
+  }
+
+  .section-title {
+    padding: 24px 18px
+  }
+
+  .story-visual {
+    min-height: 280px
+  }
+
+  .notice {
+    padding: 16px
   }
 }
