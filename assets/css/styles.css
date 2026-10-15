@@ -665,26 +665,51 @@ img {
   gap: 20px
 }
 
+
 .page-hero {
-  padding: 110px 0 78px;
-  background: linear-gradient(140deg, var(--ink), #0d5b55);
+    padding: 110px 0 78px;
+    background-image: url("../img/AOS-HERO.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* HPMC Capsules Hero Background */
+/* HPMC Capsules Hero Background */
+.page-hero.hpmc-hero {
+    background-image: url("../img/胶囊-HERO.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.page-hero.quality-hero {
+    background-image: url("../img/heroPage.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.page-hero.about {
+    background-image: url("../img/About-HERO.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .page-hero h1 {
   font-size: 64px;
   max-width: 900px;
-  color: #0064FA;
+  color: #0c4e13;
 }
 
 .page-hero p {
   font-size: 18px;
   max-width: 760px;
-  color: #d7e7e4
+  color: #000000
 }
 
 .breadcrumb {
   font-size: 13px;
-  color: #b9d0cc;
+  color: #000000;
   margin-bottom: 24px
 }
 
